@@ -1,0 +1,556 @@
+:root {
+    --fundo: linear-gradient(135deg, #eadcff, #c9b5ff);
+    --cartao: #ffffff;
+    --texto: #32134f;
+    --primaria: #7c3aed;
+    --primaria-hover: #6d28d9;
+    --borda: #e9ddff;
+    --tarefa: #f3edff;
+    --concluida: #9b8aaa;
+}
+
+/* MODO ESCURO */
+
+body.modoescuro {
+    --fundo: linear-gradient(135deg, #4a1728, #260b14);
+    --cartao: #2b0d17;
+    --texto: #fff1f2;
+    --primaria: #963653;
+    --primaria-hover: #a83b5c;
+    --borda: #542331;
+    --tarefa: #421522;
+    --concluida: #b99aa4;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--fundo);
+
+    padding: 20px;
+
+    transition: 0.3s;
+}
+
+/* CARTÃO PRINCIPAL */
+
+.cartao-aplicacao {
+    width: 100%;
+    max-width: 500px;
+
+    background: var(--cartao);
+    color: var(--texto);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+
+    z-index: 1;
+}
+
+/* FOTO */
+
+.imagem-site {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+    margin: 0 auto 18px;
+
+    border: 2px solid var(--primaria);
+}
+
+/* CABEÇALHO */
+
+.cabecalho-aplicacao {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.cabecalho-aplicacao h1 {
+    font-size: 25px;
+}
+
+/* BOTÃO DO TEMA */
+
+.botao-icon {
+    border: none;
+
+    background: transparent;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    color: var(--texto);
+}
+
+/* ENTRADA */
+
+.caixa-entrada {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+#entrada-tarefa {
+    flex: 1;
+
+    padding: 13px;
+
+    border: 2px solid var(--borda);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: transparent;
+
+    color: var(--texto);
+}
+
+#entrada-tarefa:focus {
+    border-color: var(--primaria);
+}
+
+/* BOTÃO ADICIONAR */
+
+.botao-principal {
+    border: none;
+
+    background: var(--primaria);
+
+    color: white;
+
+    padding: 13px 18px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-principal:hover {
+    background: var(--primaria-hover);
+
+    transform: scale(1.03);
+}
+
+/* LISTA */
+
+.lista-tarefas {
+    list-style: none;
+
+    max-height: 280px;
+
+    overflow-y: auto;
+}
+
+.item-tarefa {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: var(--tarefa);
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+}
+
+.item-tarefa span {
+    word-break: break-word;
+}
+
+.item-tarefa.concluida span {
+    text-decoration: line-through;
+
+    color: var(--concluida);
+}
+
+/* BOTÕES DAS TAREFAS */
+
+.acoes-tarefa {
+    display: flex;
+
+    gap: 8px;
+
+    margin-left: 10px;
+}
+
+.botao-acao {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    color: var(--texto);
+
+    transition: 0.2s;
+}
+
+.botao-acao:hover {
+    transform: scale(1.1);
+}
+
+.botao-acao.excluir:hover {
+    color: #dc2626;
+}
+
+/* CRIADO POR */
+
+.criado-por {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: var(--primaria);
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+/* CONTADOR */
+
+.rodape-aplicacao {
+    text-align: center;
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    color: var(--concluida);
+}
+
+
+/* ================================================= */
+/* BOTÃO DE ALTERAÇÕES */
+/* ================================================= */
+
+.botao-alteracoes {
+    position: fixed !important;
+
+    top: 20px !important;
+    right: 20px !important;
+
+    z-index: 999999 !important;
+
+    background: #7c3aed !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 12px !important;
+
+    padding: 12px 16px !important;
+
+    font-size: 14px !important;
+
+    font-weight: bold !important;
+
+    cursor: pointer !important;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition: 0.2s;
+
+    pointer-events: auto !important;
+}
+
+.botao-alteracoes:hover {
+    background: #6d28d9 !important;
+
+    transform: scale(1.05);
+}
+
+body.modoescuro .botao-alteracoes {
+    background: #963653 !important;
+}
+
+body.modoescuro .botao-alteracoes:hover {
+    background: #a83b5c !important;
+}
+
+
+/* ================================================= */
+/* PAINEL DE ALTERAÇÕES */
+/* ================================================= */
+
+.painel-alteracoes {
+    position: fixed !important;
+
+    top: 70px !important;
+    right: 20px !important;
+
+    width: 360px;
+
+    max-width: calc(100vw - 40px);
+
+    max-height: 75vh;
+
+    overflow-y: auto;
+
+    background: var(--cartao);
+
+    color: var(--texto);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+    border: 2px solid var(--borda);
+
+    z-index: 999998 !important;
+
+    display: none;
+}
+
+.painel-alteracoes.aberto {
+    display: block !important;
+}
+
+
+/* ================================================= */
+/* CABEÇALHO DO PAINEL */
+/* ================================================= */
+
+.cabecalho-alteracoes {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.cabecalho-alteracoes h2 {
+    font-size: 19px;
+
+    color: var(--texto);
+}
+
+
+/* ================================================= */
+/* BOTÃO FECHAR */
+/* ================================================= */
+
+.fechar-alteracoes {
+    border: none;
+
+    background: transparent;
+
+    color: var(--texto);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 999999 !important;
+
+    transition: 0.2s;
+}
+
+.fechar-alteracoes:hover {
+    transform: scale(1.15);
+
+    color: #dc2626;
+}
+
+
+/* ================================================= */
+/* ALTERAÇÕES */
+/* ================================================= */
+
+.alteracao {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background: var(--tarefa);
+
+    border-radius: 12px;
+
+    align-items: flex-start;
+
+    transition: 0.2s;
+}
+
+.alteracao:hover {
+    transform: translateX(3px);
+}
+
+.alteracao span {
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+.alteracao p {
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    color: var(--texto);
+}
+
+.alteracao strong {
+    color: var(--primaria);
+}
+
+
+/* ================================================= */
+/* BARRA DE ROLAGEM */
+/* ================================================= */
+
+.painel-alteracoes::-webkit-scrollbar {
+    width: 7px;
+}
+
+.painel-alteracoes::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.painel-alteracoes::-webkit-scrollbar-thumb {
+    background: var(--primaria);
+
+    border-radius: 10px;
+}
+
+
+/* ================================================= */
+/* ANIMAÇÃO DOS ITENS */
+/* ================================================= */
+
+.item-tarefa {
+    transition: 0.2s;
+}
+
+.item-tarefa:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ================================================= */
+/* CELULAR */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+    .botao-alteracoes {
+        top: 10px !important;
+
+        right: 10px !important;
+
+        padding: 10px 12px !important;
+    }
+
+    .painel-alteracoes {
+        top: 60px !important;
+
+        right: 10px !important;
+
+        width: 320px;
+    }
+
+    .cartao-aplicacao {
+        padding: 22px;
+    }
+
+    .imagem-site {
+        width: 125px;
+
+        height: 125px;
+    }
+
+    .caixa-entrada {
+        flex-direction: column;
+    }
+
+    .botao-principal {
+        width: 100%;
+    }
+}
+.botao-alteracoes {
+    position: fixed !important;
+
+    top: 15px !important;
+    right: 15px !important;
+
+    z-index: 999999 !important;
+
+    background: #7c3aed !important;
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 8px !important;
+
+    padding: 7px 10px !important;
+
+    font-size: 11px !important;
+    font-weight: bold !important;
+
+    cursor: pointer !important;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+
+    transition: 0.2s;
+
+    pointer-events: auto !important;
+}
+
+.botao-alteracoes:hover {
+    background: #6d28d9 !important;
+
+    transform: scale(1.04);
+}

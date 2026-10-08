@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minhas Tarefas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BOTÃO DE ALTERAÇÕES -->
+    <button id="botao-alteracoes" class="botao-alteracoes">
+        📋 Alterações
+    </button>
+
+    <!-- PAINEL DE ALTERAÇÕES -->
+    <div id="painel-alteracoes" class="painel-alteracoes">
+
+        <div class="cabecalho-alteracoes">
+
+            <h2>📋 Alterações feitas</h2>
+
+            <button
+                id="fechar-alteracoes"
+                class="fechar-alteracoes">
+                ✕
+            </button>
+
+        </div>
+
+        <div class="lista-alteracoes">
+
+            <div class="alteracao">
+                <span>🎨</span>
+
+                <p>
+                    <strong>Alteração no visual</strong><br>
+                    Foram adicionadas novas cores em tons de roxo e bordô,
+                    além de um pequeno degradê no fundo.
+                </p>
+            </div>
+
+            <div class="alteracao">
+                <span>🐸</span>
+
+                <p>
+                    <strong>Minions caindo</strong><br>
+                    Foram adicionados vários Papois caindo pela tela
+                    quando uma tarefa é concluída.
+                </p>
+            </div>
+
+            <div class="alteracao">
+                <span>🎉</span>
+
+                <p>
+                    <strong>Emojis caindo</strong><br>
+                    Foram adicionados emojis de festa, como 🎉 🥳 🎊 ✨ 💜 ⭐,
+                    junto com a animação dos Minions.
+                </p>
+            </div>
+
+            <div class="alteracao">
+                <span>💬</span>
+
+                <p>
+                    <strong>Frases motivacionais</strong><br>
+                    O site agora apresenta diferentes frases
+                    durante o uso das tarefas.
+                </p>
+            </div>
+
+            <div class="alteracao">
+                <span>🐸</span>
+
+                <p>
+                    <strong>Frase especial</strong><br>
+                    Foi adicionada a frase "Papoi` 🐸" entre
+                    as mensagens motivacionais.
+                </p>
+            </div>
+
+            <div class="alteracao">
+                <span>🌙</span>
+
+                <p>
+                    <strong>Modo escuro</strong><br>
+                    Foi mantido o botão para alternar entre
+                    o modo claro e o modo escuro.
+                </p>
+            </div>
+
+            <div class="alteracao">
+                <span>👤</span>
+
+                <p>
+                    <strong>Imagem adicionada</strong><br>
+                    Foi adicionada uma imagem minha no site.
+                </p>
+            </div>
+
+            <div class="alteracao">
+                <span>✅</span>
+
+                <p>
+                    <strong>Sistema de tarefas</strong><br>
+                    Agora é possível adicionar, concluir e excluir tarefas.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CARTÃO PRINCIPAL -->
+
+    <div class="cartao-aplicacao">
+
+        <!-- FOTO -->
+
+        <img
+            src="tici.jpg"
+            alt="Foto de Ticiane"
+            class="imagem-site"
+        >
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="cabecalho-aplicacao">
+
+            <h1>Minhas Tarefas</h1>
+
+            <button
+                id="botao-tema"
+                class="botao-icon">
+
+                🌙
+
+            </button>
+
+        </div>
+
+
+        <!-- ÁREA DE ADICIONAR TAREFA -->
+
+        <div class="caixa-entrada">
+
+            <input
+                type="text"
+                id="entrada-tarefa"
+                placeholder="Digite uma tarefa..."
+            >
+
+            <button
+                id="botao-adicionar"
+                class="botao-principal">
+
+                Adicionar
+
+            </button>
+
+        </div>
+
+
+        <!-- LISTA -->
+
+        <ul
+            id="lista-tarefas"
+            class="lista-tarefas">
+        </ul>
+
+
+        <!-- CRIADO POR -->
+
+        <p class="criado-por">
+            Criado por Ticiane
+        </p>
+
+
+        <!-- CONTADOR -->
+
+        <div class="rodape-aplicacao">
+
+            <span id="contador-tarefas">
+                Bora começar! 💜
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
